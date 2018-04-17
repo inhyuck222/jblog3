@@ -5,7 +5,7 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <div id="header">
-	<h1>${blog.title }</h1>
+	<h1 id="blog-name"><a href="${pageContext.servletContext.contextPath }/${authUser.no }">${blog.title }</a></h1>
 	<ul>
 		<c:if test="${empty authUser }">
 			<li><a href="${pageContext.request.contextPath}/user/login">로그인</a></li>

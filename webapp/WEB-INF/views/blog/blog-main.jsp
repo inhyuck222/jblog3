@@ -9,6 +9,9 @@
 <title>JBlog</title>
 <Link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/jblog.css">
 </head>
+<%
+	pageContext.setAttribute("newLine", "\n");
+%>
 <body>
 	<div id="container">
 		<c:import url="/WEB-INF/views/includes/blog-header.jsp"></c:import>
@@ -16,9 +19,8 @@
 			<div id="content">
 				<div class="blog-content">
 					<h4>${mainPost.title }</h4>
-					<p>
-						${mainPost.content }
-					<p>
+					<p>${fn:replace(mainPost.content, newLine, "<br>") }</p>
+					<!--p>${mainPost.content }<p-->
 				</div>
 				<ul class="blog-list">
 					<c:forEach items="${posts }" var="post">

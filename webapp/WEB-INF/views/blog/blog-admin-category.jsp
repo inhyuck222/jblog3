@@ -34,13 +34,13 @@
 	      			<c:set var="count" value="${fn:length(list) }"/>
 	      			<c:forEach items="${list }" var="category" varStatus="status">
 	      				<tr id='categories'>
-		      				<th>${count - status.index }</th>
-		      				<th>${category.name }</th>
-		      				<th>${category.postNo }</th>
-		      				<th>${category.description }</th>
-		      				<th data-no="${category.no }">
+		      				<td id='category-num'>${count - status.index }</td>
+		      				<td>${category.name }</td>
+		      				<td>${category.postNo }</td>
+		      				<td>${category.description }</td>
+		      				<td data-no="${category.no }">
 		      					<a href="#" id="delete-category" ><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></a>		      					
-		      				</th>
+		      				</td>
 		      			</tr>
 	      			</c:forEach>
 				</table>
@@ -91,7 +91,14 @@ $(document).ready(function(){
 					return;
 				}
 				var tr = th.closest("tr");
-				tr.remove();				
+				tr.remove();
+				
+				var length = $("#category-table tr").length;
+				
+				$("#category-table #category-num").each(function(index){
+					$(this).text(length - index - 1);
+				});
+				
 			}
 		});
 	});
@@ -137,6 +144,12 @@ $(function(){
       			
       			$(element).html(html);
       			$(element).insertAfter($("#category-table-header"));
+      			
+				var length = $("#category-table tr").length;
+				
+				$("#category-table #category-num").each(function(index){
+					$(this).text(length - index - 1);
+				});
 
       			$('#new-category-name').val("");
       			$('#new-category-description').val("");

@@ -27,7 +27,7 @@ public class MeasureExcutionTimeAspect {
 		String taskName = className + ", " + methodName;
 		
 		System.out.println("[ExecutionTime] " + " [" + taskName + "]" + " : " + totalTime + " millis");
-		  
+		
 		return result;
 	}
 
