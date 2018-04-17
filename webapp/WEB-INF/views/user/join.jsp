@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!doctype html>
 <html>
@@ -46,13 +47,21 @@ $(function(){
 <body>
 	<div class="center-content">
 		<c:import url="/WEB-INF/views/includes/center-content-header.jsp"></c:import>
-		<form 
+		<form:form
+			modelAttribute="userVo" 
 			class="join-form" 
-			id="join-form"
+			id="join-form" 
 			enctype="multipart/form-data" 
-			method="post" action="${pageContext.servletContext.contextPath }/user/join">
+			method="post" 
+			action="${pageContext.servletContext.contextPath }/user/join">
+			
 			<label class="block-label" for="name">이름</label>
-			<input id="name"name="name" type="text" value="">
+			<form:input path="name"/>
+			<p>
+				<strong>
+					<form:errors path="name"/>
+				</strong>
+			</p>
 			
 			<label class="block-label" for="blog-id">아이디</label>
 			<input id="blog-id" name="id" type="text"> 
@@ -70,7 +79,7 @@ $(function(){
 
 			<input type="submit" value="가입하기">
 
-		</form>
+		</form:form>
 	</div>
 </body>
 </html>

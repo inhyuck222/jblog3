@@ -2,7 +2,7 @@ package com.cafe24.jblog.vo;
 
 public class BlogVo {
 
-	private Long no;
+	private Long no;	
 	private String title;
 	private String logoPath;
 	private String tag;

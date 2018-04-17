@@ -22,6 +22,7 @@ public class BlogDao {
 	public BlogVo selectBlog(String id) {
 		BlogVo blog = sqlSession.selectOne("blog.selectBlogById", id);
 		
+		
 		return blog;
 	}
 	

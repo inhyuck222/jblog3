@@ -41,6 +41,7 @@ public class BlogService {
 	}
 
 	public BlogVo getBlog(String id) {
+		
 		BlogVo blog = blogDao.selectBlog(id);
 
 		return blog;
@@ -66,4 +67,6 @@ public class BlogService {
 		blog.setLogoPath(logoPath);
 	}
 
+	
+	
 }

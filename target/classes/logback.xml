@@ -32,7 +32,7 @@
 
 	<logger name="com.cafe24.jblog.exception" level="warn" additivity="false">
 		<appender-ref ref="globalExceptionAppender" />
-	</logger>	
+	</logger>
 
 	<!-- com.cafe24.mysite.exception 아래 패키지 로그들만 C:\LogExample\logexample3.log 
 		파일과 콘솔로 출력하는 로거 -->

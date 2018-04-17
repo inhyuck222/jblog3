@@ -1,8 +1,10 @@
 package com.cafe24.jblog.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
@@ -25,7 +27,7 @@ public class MeasureExcutionTimeAspect {
 		String taskName = className + ", " + methodName;
 		
 		System.out.println("[ExecutionTime] " + " [" + taskName + "]" + " : " + totalTime + " millis");
-		
+		  
 		return result;
 	}
 

@@ -31,7 +31,6 @@ public class GlobalExceptionHandler {
 		
 		LOG.error( errors );
 		
-		
 		String accept = request.getHeader("accept");		
 		if(accept.matches(".*application/json.*")) {
 			//실패 JSON 응답
