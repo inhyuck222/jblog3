@@ -12,7 +12,6 @@
 	<mvc:annotation-driven>
 		<!-- Message Converter -->
 		<mvc:message-converters>
-
 			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
 				<property name="supportedMediaTypes">
 					<list>
@@ -29,7 +28,6 @@
 					</list>
 				</property>
 			</bean>
-
 		</mvc:message-converters>
 
 		<!-- argument resolver -->
